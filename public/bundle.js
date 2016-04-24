@@ -25581,7 +25581,7 @@
 	  mixins: [ReactFireMixin],
 	  getInitialState: function getInitialState() {
 	    return {
-	      notes: [1, 2, 3],
+	      notes: [],
 	      bio: {},
 	      repos: []
 	    };
