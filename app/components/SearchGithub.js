@@ -7,9 +7,9 @@ var SearchGithub = React.createClass({
     this.usernameRef = ref;
   },
   handleSubmit: function(){
-    var username = this.usernameRef.value;
+    var roomname = this.usernameRef.value;
     this.usernameRef.value = '';
-    this.history.pushState(null, "/profile/" + username)
+    this.history.pushState(null, "/room/" + roomname)
   },
   render: function(){
     return (
@@ -19,7 +19,7 @@ var SearchGithub = React.createClass({
             <input type="text" className="form-control" ref={this.getRef} />
           </div>
           <div className="form-group col-sm-5">
-            <button type="submit" className="btn btn-block btn-primary">Search Github</button>
+            <button type="submit" className="btn btn-block btn-primary">Search Rooms</button>
           </div>
         </form>
       </div>
