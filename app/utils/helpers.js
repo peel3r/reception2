@@ -1,14 +1,22 @@
 import axios from 'axios'
 
-function getRepos (username) {
-  return axios.get(`https://api.github.com/users/${username}/repos`)
+function getRooms () {
+  return axios.get(`http://localhost:3009/api/reception/v1/rooms.json`)
 }
 
-function getUserInfo (username) {
-  return axios.get(`https://api.github.com/users/${username}`)
+function getReservations (username) {
+  return axios.get(`http://localhost:3009/api/reception/v1/reservations`)
 }
 
-export default function getGithubInfo (username) {
-    return axios.all([getRepos(username), getUserInfo(username)])
-      .then((arr) => ({repos: arr[0].data, bio: arr[1].data}))
-  }
+var helpers = {
+  getIptvInfo: function () {
+    return axios.all([getRooms(), getReservations()]).then(function(arr){
+      return {
+        rooms: arr[0].data,
+        reservations: arr[1].data
+      }
+  })
+}
+}
+
+module.exports = helpers

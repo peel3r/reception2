@@ -3,6 +3,7 @@ import Router from 'react-router'
 import RoomReservations from './iptv/RoomReservations'
 import RoomDetails from './iptv/RoomDetaills'
 import RoomMessages from './iptv/RoomMessages'
+import helpers from '../utils/helpers'
 var $ = require ('jquery')
 
 var Room = React.createClass({
@@ -24,17 +25,21 @@ var Room = React.createClass({
 
 
   componentDidMount: function() {
-    this.serverRequest = $.get('http://localhost:3009/api/reception/v1/rooms.json', function (result){
-      var room = result[0]
+    // this.serverRequest = $.get('http://localhost:3009/api/reception/v1/rooms.json', function (result){
+    //   var room = result[0]
+    helpers.getIptvInfo()
+    .then(function(data){
+      console.log('data-----...>>',data)
       this.setState({
-        room_name: room.room_name,
-        site_id: room.site_id,
-        id: room.id,
-        site_name: room.site_name,
-        check_in_date: room.check_in_date,
-        check_out_date: room.check_out_date,
-        guest_name: room.guest_name,
-        reservation_guest_id: room.reservation_guest_id
+
+        // room_name: room.room_name,
+        // site_id: room.site_id,
+        // id: room.id,
+        // site_name: room.site_name,
+        // check_in_date: room.check_in_date,
+        // check_out_date: room.check_out_date,
+        // guest_name: room.guest_name,
+        // reservation_guest_id: room.reservation_guest_id
       })
     }.bind(this))
 
