@@ -1,8 +1,8 @@
 var React = require('react');
 var SearchGithub = require('./SearchGithub');
-
 var Main = React.createClass({
   render: function(){
+    console.log(this.props.children)
     return (
       <div className="main-container">
         <nav className="navbar navbar-default" role="navigation">
