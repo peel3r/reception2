@@ -35,7 +35,7 @@ var Room = React.createClass({
   //
   // },
   render: function(){
-    console.log('data props---->>>>>>',this.state.reservations)
+    console.log('data props-reservations--->>>>>>',this.state.reservations)
     return (
       <div className="row">
         <div className="col-md-6">
@@ -46,6 +46,7 @@ var Room = React.createClass({
         </div>
         <div className="col-md-4">
           <RoomReservations
+            roomName={this.props.params.roomname}
             data={this.state.reservations}
             />
         </div>
