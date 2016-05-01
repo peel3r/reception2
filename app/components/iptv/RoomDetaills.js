@@ -1,18 +1,16 @@
 var React = require('react')
 
 var RoomDetails = React.createClass({
+  propTypes: {
+    roomName: React.PropTypes.string.isRequired,
+    rooms: React.PropTypes.array.isRequired
+  },
   getInitialState: function () {
 
-    propTypes: {
-      roomName: React.PropTypes.string.isRequired
-      rooms: React.PropTypes.object.isRequired
-    }
     return {
       roomName: []
     }
   },
-
-
   handleChange: function () {
 
   },
@@ -33,21 +31,16 @@ var RoomDetails = React.createClass({
       if (room.room_name === roomName)
       return (
         <div  key={index}>
-          <table className='table'>
-            <thead>
-              <tr>
-                <th>Room Name</th>
-                <th>Guests</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{room.room_name === roomName && <h4>{room.room_name}</h4>}</td>
-                <td>{room.room_name === roomName && <h4>{room.room_guests.join()}</h4>}</td>
-              </tr>
-            </tbody>
-          </table>
+          <div className="panel panel-primary">
+            <div className="panel-heading">
+              <h3 className="panel-title">Room Details</h3>
+            </div>
+          <div className="panel-body">
+            {room.room_name === roomName && <div>Name:  <strong>{room.room_name}</strong></div>}
+            {room.room_name === roomName && <div>Guestst:  <strong>{room.room_guests.join()}</strong></div>}
+          </div>
         </div>
+</div>
       )
     })
     return (
