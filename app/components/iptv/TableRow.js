@@ -8,7 +8,7 @@ var TableRow = React.createClass({
       <tr>
 
         <td>{this.props.data.id}</td>
-        <td>{this.props.data.room_name}</td>
+        <td><a href={`file:///Users/pawel/Desktop/projects/newaya/areception2/public/index.html#/room/${this.props.data.room_name}`} > {this.props.data.room_name} </a></td>
         <td><Time value={this.props.data.check_in_date} format='DD-MM-YYYY'/></td>
         <td><Time value={this.props.data.check_out_date} format='DD-MM-YYYY'/></td>
         <td>{this.props.data.room_guests}</td>
