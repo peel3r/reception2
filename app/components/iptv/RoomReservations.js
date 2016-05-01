@@ -3,6 +3,10 @@ import Time from 'react-time'
 var RoomReservations = React.createClass({
 
   render: function () {
+    propTypes: {
+      roomName: React.PropTypes.string.isRequired
+      data: React.PropTypes.object.isRequired
+    }
 
     var roomName = this.props.roomName
     var details = this.props.data.map(function(reservation, index){

@@ -1,12 +1,16 @@
 var React = require('react')
 
 var RoomDetails = React.createClass({
-getInitialState: function () {
-  return {
-    roomName: []
+  getInitialState: function () {
 
-  }
-},
+    propTypes: {
+      roomName: React.PropTypes.string.isRequired
+      rooms: React.PropTypes.object.isRequired
+    }
+    return {
+      roomName: []
+    }
+  },
 
 
   handleChange: function () {
@@ -14,11 +18,11 @@ getInitialState: function () {
   },
 
   componentDidMount: function () {
-      this.setState({
-        roomName: this.props.roomName
+    this.setState({
+      roomName: this.props.roomName
 
 
-      })
+    })
   },
 
 
@@ -31,11 +35,11 @@ getInitialState: function () {
         <div  key={index}>
           <table className='table'>
             <thead>
-            <tr>
-              <th>Room Name</th>
-              <th>Guests</th>
-            </tr>
-          </thead>
+              <tr>
+                <th>Room Name</th>
+                <th>Guests</th>
+              </tr>
+            </thead>
             <tbody>
               <tr>
                 <td>{room.room_name === roomName && <h4>{room.room_name}</h4>}</td>
