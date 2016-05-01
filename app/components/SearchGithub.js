@@ -14,11 +14,16 @@ var SearchGithub = React.createClass({
   render: function(){
     return (
       <div className="col-sm-12">
+        <div className='col-sm-4'>
+        <div className='label label-defaylt'>
+        <a href="file:///Users/pawel/Desktop/projects/newaya/areception2/public/index.html">Home</a>
+        </div>
+        </div>
         <form onSubmit={this.handleSubmit}>
-          <div className="form-group col-sm-7">
+          <div className="form-group col-sm-4">
             <input type="text" className="form-control" ref={this.getRef} />
           </div>
-          <div className="form-group col-sm-5">
+          <div className="form-group col-sm-4">
             <button type="submit" className="btn btn-block btn-primary">Search Rooms</button>
           </div>
         </form>
