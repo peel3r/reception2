@@ -1,5 +1,5 @@
 var React = require('react');
-var SearchGithub = require('./SearchGithub');
+var SearchGithub = require('./SearchRooms');
 var Main = React.createClass({
   render: function(){
     console.log(this.props.children)
