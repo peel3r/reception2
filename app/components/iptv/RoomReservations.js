@@ -1,5 +1,6 @@
 var React = require('react')
 import Time from 'react-time'
+import Guest from './Guest'
 var RoomReservations = React.createClass({
   propTypes: {
     roomName: React.PropTypes.string.isRequired,
@@ -34,6 +35,7 @@ var RoomReservations = React.createClass({
                     <td>{reservation.checkin && <h4><Time value={indate} format='DD-MM-YYYY'/></h4>}</td>
                     <td>{reservation.checkout && <h4><Time value={outdate} format='DD-MM-YYYY'/></h4>}</td>
                     <td>{reservation.guest_names && <h4>{reservation.guest_names.join()}</h4>}</td>
+
                   </tr>
                 </tbody>
               </table>
@@ -45,6 +47,7 @@ var RoomReservations = React.createClass({
     return (
       <div>
         {details}
+
       </div>
     )
   }

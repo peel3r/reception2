@@ -4,6 +4,7 @@ import RoomReservations from './iptv/RoomReservations'
 import RoomDetails from './iptv/RoomDetaills'
 import RoomMessages from './iptv/RoomMessages'
 import helpers from '../utils/helpers'
+import Guest from './iptv/Guest'
 
 var Room = React.createClass({
 
@@ -38,13 +39,19 @@ var Room = React.createClass({
     console.log('data props-reservations--->>>>>>',this.state.reservations)
     return (
       <div className="row">
-        <div className="col-md-6">
+        <div className="col-md-2">
           <RoomDetails
             roomName={this.props.params.roomname}
             rooms={this.state.rooms}
             />
         </div>
-        <div className="col-md-4">
+        <div className="col-md-5">
+          <Guest
+            roomName={this.props.params.roomname}
+            rooms={this.state.rooms}
+            />
+        </div>
+        <div className="col-md-5">
           <RoomReservations
             roomName={this.props.params.roomname}
             data={this.state.reservations}
