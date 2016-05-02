@@ -40,8 +40,8 @@ var Guest = React.createClass({
             </div>
             <div class="panel-body">
               <div class="container">
-              <p>{room.room_name === roomName && <div> Guestst 1:  <strong>{room.room_guests[0]}</strong></div>}</p>
-              <p>{room.room_name === roomName && <div> Guestst 2:  <strong>{room.room_guests[1]}</strong></div>}</p>
+              {room.room_name === roomName && <div> Guestst 1:  <strong>{room.room_guests[0]}</strong></div>}
+              {room.room_name === roomName && <div> Guestst 2:  <strong>{room.room_guests[1]}</strong></div>}
             </div></div>
           </div>
         </div>

@@ -19,7 +19,7 @@ var RoomReservations = React.createClass({
         <div  key={index}>
           <div className="panel panel-primary">
             <div className="panel-heading">
-              <h3 className="panel-title">Reservation</h3>
+              <h3 className="panel-title">Reservation Dates</h3>
             </div>
             <div className="panel-body">
               <table className='table'>
@@ -27,15 +27,12 @@ var RoomReservations = React.createClass({
                   <tr>
                     <th>check in</th>
                     <th>check out</th>
-                    <th>Guests</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>{reservation.checkin && <h4><Time value={indate} format='DD-MM-YYYY'/></h4>}</td>
                     <td>{reservation.checkout && <h4><Time value={outdate} format='DD-MM-YYYY'/></h4>}</td>
-                    <td>{reservation.guest_names && <h4>{reservation.guest_names.join()}</h4>}</td>
-
                   </tr>
                 </tbody>
               </table>
@@ -47,7 +44,6 @@ var RoomReservations = React.createClass({
     return (
       <div>
         {details}
-
       </div>
     )
   }
